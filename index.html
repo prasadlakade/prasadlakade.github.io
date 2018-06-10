@@ -1,83 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>All Assigmnts</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<style type="text/css">
-	body{font-family: sans-serif,arial;background-color: #000;}
-	.btndiv{position: relative;text-align: center;margin:50px 0;}
-	.btndiv a{position: relative;display: inline-block;padding: 20px 50px;color: #fff;background-color: #333;text-decoration: none;text-transform: uppercase;}
-	.btndiv .btnactive{background-color: #666666;}
-	.image-block{position: relative;padding:50px; margin:0 auto;max-width: 40%;overflow: hidden;background-color: #eee}
-	.image-block .imgblk{width: 22%;float: left;margin-left:4%;transition: all 0.5s;opacity: 0.05;}
-	.image-block .imgblk:first-child{margin-left: 0;}
-	.image-block .imgblk img{width: 100%;height: auto;border-radius:15px;}
-	.image-block .imgactive{opacity: 1;}
+	body{position: relative;background:#fff;font-size:14px;font-family: arial,sans-serif;line-height:140%;}
+	*:focus , *:active{outline: none !important;}
+	header.panel{text-transform: uppercase;position: sticky;top: 0;z-index: 11;box-shadow:0 0 15px #ddd;height: 72px;
+    border: 1px solid #eee;margin-bottom: 0;}
+    header.panel h5{margin:0;line-height: 72px;}
+	iframe{position: absolute;width: 100%;height: 100vh;display: block;width: calc(100% - 320px);border:0;}
+
+	.sidemenu{position: fixed;width: 300px;float: left;height:100vh;background-color: #f6f6f6;top:0;}
+	.menu-canvas{position: relative;top:0;bottom: 0;display: block;left:0 ;right:0;}
+	.sidemenu iframe{border:0;}
+	.wrapper1{width: calc(100% - 300px);float: right}
+	.close{position: absolute;right:0;top:50%;width: 30px;height: 30px;transform: translateY(-50%);background-color: #ccc;}
 </style>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
 </head>
 <body>
-	<div id="btndiv" class="btndiv">
-		<a href="javascript:void(0);" data-id="black" class="button btnactive" >Black</a>
-		<a href="javascript:void(0);" data-id="gold" class="button" >Gold</a>
-		<a href="javascript:void(0);" data-id="blue" class="button" >Blue</a>
-		<a href="javascript:void(0);" data-id="rose-gold" class="button" >Rose Gold</a>
+	<div id="sidemenu" class="sidemenu">
+<!-- 		<span class="close">X</span>
+ -->		<header class="panel">
+			<h5 class="text-center">All Assignments</h5>
+		</header>
+		<nav>
+			<ul class="list-group">
+				<li><a href="javascript:void(0);" data-id="entrance/index.html"  class="menulinks list-group-item">Entrance Test</a></li>
+				<li><a href="javascript:void(0);" data-id="assignment-one/index.html" class="menulinks list-group-item active">Assignment one</a></li>
+			</ul>
+		</nav>
 	</div>
-	<div id="image-block" class="image-block">
-		<div class="imgblk imgactive" id="black">
-			<img src="black.jpeg" >
-		</div>
-		<div class="imgblk" id="gold">
-			<img src="gold.jpeg" >
-		</div>
-		<div class="imgblk" id="blue">
-			<img src="blue.jpeg" >
-		</div>
-		<div class="imgblk" id="rose-gold">
-			<img src="rose-gold.jpeg" >
-		</div>
+	<div class="wrapper1">
+		<iframe src="assignment-one/index.html" id="ass1"></iframe>
 	</div>
 
 	<script type="text/javascript">
+		$(document).ready(function(){
+			var getMenuLinks = $('.menulinks');
 
-		var btns = document.getElementsByTagName("a"); //get all buttons 
-
-		for (var i = 0; i < btns.length; i++) {
-			btns[i].addEventListener("click", function(e){
-				showImg(this);
-			});
-		}
-
-		function showImg(id){
-			var getBtn = id.getAttribute("data-id"); //get attribute value
-			var getAllBtns = document.getElementsByTagName("a");
-			
-			for (var j = 0; j < getAllBtns.length; j++) {
-				//getAllBtns[j].style.backgroundColor = "#333";
-				getAllBtns[j].classList.remove("btnactive");
-				if(id){
-					//id.style.backgroundColor = "#666666";
-					id.classList.add("btnactive");
-				}
+			for (var i = 0; i < getMenuLinks.length; i++) {
+				$(getMenuLinks).each(function(i){
+					$(this).on('click',function(){
+						$(this).addClass('active');
+						var clickedMenuHref = $(this).attr('data-id');
+						$('#ass1').attr("src", clickedMenuHref );
+						$(this).parents().siblings().children().removeClass('active');
+					})
+				})
 			}
-			//console.log(GetBtn);
-			getImgBlocks(getBtn); // pass attribute value 
-		}
 
-
-		function getImgBlocks(btnid){
-			var imgblk = document.getElementById(btnid); //get image div by using passed value
-			//console.log(imgblk);
-			var mainImgblk = document.getElementById("image-block"); // get main block div of all image divs(extra step :P)
-			var allImgblks = mainImgblk.getElementsByTagName("div"); // loop through all image divs (as we have to hide others and show only clicked one)
-			for (var i = 0; i < allImgblks.length; i++) {
-				//allImgblks[i].style.opacity = "0.05"; 
-				allImgblks[i].classList.remove("imgactive"); //visibility hidden for all image divs
-				if(btnid){ // check for passed value by show img
-					//imgblk.style.opacity = "1";  
-					imgblk.classList.add("imgactive");// if passed value is same as var imgblock div then visble the div
-				}
-			}
-		}
+			// // $('#' + getMenuLinks).attr()
+			// $('.close').on('click', function(){
+			// 	$('.sidemenu').css('width','0');
+			// 	$('.sidemenu').css('opacity','0');
+			// 	$('.wrapper1').css('width','100%');
+			// 	$('iframe').css('width','100%');
+			// })
+		})
 	</script>
-
 </body>
 </html>

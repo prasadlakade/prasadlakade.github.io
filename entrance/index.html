@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{font-family: sans-serif,arial;background-color: #000;}
+	.btndiv{position: relative;text-align: center;margin:50px 0;}
+	.btndiv a{position: relative;display: inline-block;padding: 20px 50px;color: #fff;background-color: #333;text-decoration: none;text-transform: uppercase;}
+	.btndiv .btnactive{background-color: #666666;}
+	.image-block{position: relative;padding:50px; margin:0 auto;max-width: 40%;overflow: hidden;background-color: #eee}
+	.image-block .imgblk{width: 22%;float: left;margin-left:4%;transition: all 0.5s;opacity: 0.05;}
+	.image-block .imgblk:first-child{margin-left: 0;}
+	.image-block .imgblk img{width: 100%;height: auto;border-radius:15px;}
+	.image-block .imgactive{opacity: 1;}
+</style>
+</head>
+<body>
+	<div id="btndiv" class="btndiv">
+		<a href="javascript:void(0);" data-id="black" class="button btnactive" >Black</a>
+		<a href="javascript:void(0);" data-id="gold" class="button" >Gold</a>
+		<a href="javascript:void(0);" data-id="blue" class="button" >Blue</a>
+		<a href="javascript:void(0);" data-id="rose-gold" class="button" >Rose Gold</a>
+	</div>
+	<div id="image-block" class="image-block">
+		<div class="imgblk imgactive" id="black">
+			<img src="black.jpeg" >
+		</div>
+		<div class="imgblk" id="gold">
+			<img src="gold.jpeg" >
+		</div>
+		<div class="imgblk" id="blue">
+			<img src="blue.jpeg" >
+		</div>
+		<div class="imgblk" id="rose-gold">
+			<img src="rose-gold.jpeg" >
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		var btns = document.getElementsByTagName("a"); //get all buttons 
+
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].addEventListener("click", function(e){
+				showImg(this);
+			});
+		}
+
+		function showImg(id){
+			var getBtn = id.getAttribute("data-id"); //get attribute value
+			var getAllBtns = document.getElementsByTagName("a");
+			
+			for (var j = 0; j < getAllBtns.length; j++) {
+				//getAllBtns[j].style.backgroundColor = "#333";
+				getAllBtns[j].classList.remove("btnactive");
+				if(id){
+					//id.style.backgroundColor = "#666666";
+					id.classList.add("btnactive");
+				}
+			}
+			//console.log(GetBtn);
+			getImgBlocks(getBtn); // pass attribute value 
+		}
+
+
+		function getImgBlocks(btnid){
+			var imgblk = document.getElementById(btnid); //get image div by using passed value
+			//console.log(imgblk);
+			var mainImgblk = document.getElementById("image-block"); // get main block div of all image divs(extra step :P)
+			var allImgblks = mainImgblk.getElementsByTagName("div"); // loop through all image divs (as we have to hide others and show only clicked one)
+			for (var i = 0; i < allImgblks.length; i++) {
+				//allImgblks[i].style.opacity = "0.05"; 
+				allImgblks[i].classList.remove("imgactive"); //visibility hidden for all image divs
+				if(btnid){ // check for passed value by show img
+					//imgblk.style.opacity = "1";  
+					imgblk.classList.add("imgactive");// if passed value is same as var imgblock div then visble the div
+				}
+			}
+		}
+	</script>
+
+</body>
+</html>
