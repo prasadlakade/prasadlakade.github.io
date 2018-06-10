@@ -1,6 +1,6 @@
 
 
-.grid__item { position: relative; display: grid; grid-template-columns: 100%; grid-template-rows: 100%; align-items: center; justify-items: center; overflow: hidden; padding: 4rem 1.5rem; background: var(--color-item-bg); }
+.grid__item { position: relative; display: grid; grid-template-columns: 100%; grid-template-rows: 100%; align-items: center; justify-items: center; overflow: hidden; padding: 4rem 1.5rem; background: var(--color-item-bg); width: 100vw;height: 100vh;}
 
 .theme-7 {
     --color-action: #e2405b;
