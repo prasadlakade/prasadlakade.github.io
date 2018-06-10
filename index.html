@@ -10,60 +10,89 @@
 	body{position: relative;background:#fff;font-size:14px;font-family: arial,sans-serif;line-height:140%;}
 	*:focus , *:active{outline: none !important;}
 	header.panel{text-transform: uppercase;position: sticky;top: 0;z-index: 11;box-shadow:0 0 15px #ddd;height: 72px;
-    border: 1px solid #eee;margin-bottom: 0;}
-    header.panel h5{margin:0;line-height: 72px;}
-	iframe{position: absolute;width: 100%;height: 100vh;display: block;width: calc(100% - 320px);border:0;}
+		border: 1px solid #eee;margin-bottom: 0;}
+		header.panel h5{margin:0;line-height: 72px;}
+		iframe{position: absolute;width: 100%;height: 100vh;display: block;width: calc(100% - 320px);border:0;}
 
-	.sidemenu{position: fixed;width: 300px;float: left;height:100vh;background-color: #f6f6f6;top:0;}
-	.menu-canvas{position: relative;top:0;bottom: 0;display: block;left:0 ;right:0;}
-	.sidemenu iframe{border:0;}
-	.wrapper1{width: calc(100% - 300px);float: right}
-	.close{position: absolute;right:0;top:50%;width: 30px;height: 30px;transform: translateY(-50%);background-color: #ccc;}
-</style>
+		.start-div{position: absolute;: block;z-index: 99999;background-color: #333;width: 100vw;height: 100vh;}
+		.innerdiv{top:50%;left: 50%;transform: translate(-50%, -50%);position: absolute; text-align: center;}
 
+		.sidemenu{position: fixed;width: 300px;float: left;height:100vh;background-color: #f6f6f6;top:0;}
+		.menu-canvas{position: relative;top:0;bottom: 0;display: block;left:0 ;right:0;}
+		.sidemenu iframe{border:0;}
+		.wrapper1{width: calc(100% - 300px);float: right}
+		.close{position: absolute;right:0;top:50%;width: 30px;height: 30px;transform: translateY(-50%);background-color: #ccc;}
+	</style>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/newcss.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/base.css" /> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+	<script src='js/jquery.particleground.min.js'></script>
+
 </head>
 <body>
+	<div class="start-div" id="particles">
+		<div class="innerdiv">
+			<!-- <h3>Enter</h3> -->
+			<a href="#" class="enterbtn">
+			<div class="grid__item theme-7">
+				<!-- <button class="action"><<</button> -->
+				<button class="particles-button">Enter</button>
+			</div>
+		</a>
+		</div>
+	</div>
 	<div id="sidemenu" class="sidemenu">
 <!-- 		<span class="close">X</span>
- -->		<header class="panel">
-			<h5 class="text-center">All Assignments</h5>
-		</header>
-		<nav>
-			<ul class="list-group">
-				<li><a href="javascript:void(0);" data-id="entrance/index.html"  class="menulinks list-group-item">Entrance Test</a></li>
-				<li><a href="javascript:void(0);" data-id="assignment-one/index.html" class="menulinks list-group-item active">Assignment one</a></li>
-			</ul>
-		</nav>
-	</div>
-	<div class="wrapper1">
-		<iframe src="assignment-one/index.html" id="ass1"></iframe>
-	</div>
+-->		<header class="panel">
+	<h5 class="text-center">All Assignments</h5>
+</header>
+<nav>
+	<ul class="list-group">
+		<li><a href="/" class=" list-group-item">Home</a></li>
+		<li><a href="javascript:void(0);" data-id="entrance/index.html"  class="menulinks list-group-item">Entrance Test</a></li>
+		<li><a href="javascript:void(0);" data-id="assignment-one/index.html" class="menulinks list-group-item active">Assignment one</a></li>
+	</ul>
+</nav>
+</div>
+<div class="wrapper1">
+	<iframe src="assignment-one/index.html" id="ass1"></iframe>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var getMenuLinks = $('.menulinks');
-
-			for (var i = 0; i < getMenuLinks.length; i++) {
-				$(getMenuLinks).each(function(i){
-					$(this).on('click',function(){
-						$(this).addClass('active');
-						var clickedMenuHref = $(this).attr('data-id');
-						$('#ass1').attr("src", clickedMenuHref );
-						$(this).parents().siblings().children().removeClass('active');
-					})
-				})
-			}
-
-			// // $('#' + getMenuLinks).attr()
-			// $('.close').on('click', function(){
-			// 	$('.sidemenu').css('width','0');
-			// 	$('.sidemenu').css('opacity','0');
-			// 	$('.wrapper1').css('width','100%');
-			// 	$('iframe').css('width','100%');
-			// })
+		$('.enterbtn').on('click',function(){
+			setTimeout(function(){
+			  $('.start-div').fadeOut();
+			}, 2000);
 		})
-	</script>
+
+		var getMenuLinks = $('.menulinks');
+
+		for (var i = 0; i < getMenuLinks.length; i++) {
+			$(getMenuLinks).each(function(i){
+				$(this).on('click',function(){
+					$(this).addClass('active');
+					var clickedMenuHref = $(this).attr('data-id');
+					$('#ass1').attr("src", clickedMenuHref );
+					$(this).parents().siblings().children().removeClass('active');
+				})
+			})
+		}
+	})
+
+	document.addEventListener('DOMContentLoaded', function () {
+	  particleground(document.getElementById('particles'), {
+	    dotColor: '#5cbdaa',
+	    lineColor: '#5cbdaa'
+	  });
+	  // var intro = document.getElementById('intro');
+	  // intro.style.marginTop = - intro.offsetHeight / 2 + 'px';
+	}, false);
+</script>
+
+<script src='js/anime.min.js'></script>
+<script src='js/particles.js'></script>
+<script src='js/demo.js'></script>
 </body>
 </html>
