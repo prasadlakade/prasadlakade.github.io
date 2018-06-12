@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Assignment Two</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css">
+	body{position: relative;background:#fff;font-size:14px;font-family: arial,sans-serif;line-height:140%;}
+	*:focus , *:active{outline: none !important;}
+	header.panel{text-transform: uppercase;position: sticky;top: 0;z-index: 11;box-shadow:0 0 15px #ddd;}
+	.button.btn{margin:5px auto;display: block;}
+	.alert-success{display: inline-block;}
+	code{display: block;}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="panel">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center">Assignment Two</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="main-wrapper list-group">
+						<div class="questions-wrap well ">
+							<h3 class="">Q1 :var counter = 0;
+								counter++; ++counter; alert( counter );
+							What will alert this and why?</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div id="showOutput" class="alert alert-success"></div>
+								<code>
+									<p>Below is the reason for  2</p>
+									<p data-height="265" data-theme-id="light" data-slug-hash="oyZJbE" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="Solution one" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/oyZJbE/">Solution one</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+									<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+								</code>
+								<script type="text/javascript">
+									var counter = 0;
+									counter++; 
+									++counter;
+									document.getElementById("showOutput").innerHTML = counter;
+									console.log("Answer 1 : " + counter);
+
+									console.log("------------------------------------------");
+								</script>
+							</div>
+						</div>	
+						<div class="questions-wrap well ">
+							<h3 class="">Q2 : var n = 2; n *= 3 + 5; alert( n );
+							What will alert this and why?</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+
+								<div id="showOutput2" class="alert alert-success"></div>
+								<code>
+									<p>Below is the reason for  2</p>
+									<p data-height="265" data-theme-id="light" data-slug-hash="yEMGza" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="yEMGza" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/yEMGza/">yEMGza</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</code>
+								<script type="text/javascript">
+									var n = 2;
+									n *= 3 + 5;//	x *= y =>	x = x * y
+									alert( n );//16
+									document.getElementById("showOutput2").innerHTML = n;
+									console.log("Answer 2 : " + n);
+									console.log("------------------------------------------");
+								</script>
+							</div>
+						</div>
+						<div class="questions-wrap well ">
+							<h3 class="">Q3 :  What are the final values of all variables a, b, c and d after the code below?
+							var a = 1, b = 1; var c = ++a;var d = b++;</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div id="showOutput3" class="alert alert-success"></div>
+								<code>
+									<p>Below is the reason for  2</p>
+									<p data-height="265" data-theme-id="light" data-slug-hash="xzdVje" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="xzdVje" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/xzdVje/">xzdVje</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</code>
+								<script type="text/javascript">
+									var a = 1;
+									var b = 1; 
+									var c = ++a;
+									var d = b++;
+									document.getElementById("showOutput3").innerHTML = "a= " + a +"<br>" + "b= "+ b +"<br>" + "c= " + c +"<br>" + "d =" + d;
+									console.log("Answer 3 :a = " + a);
+									console.log("Answer 3 : b =" + b );
+									console.log("Answer 3 : c = " + c );
+									console.log("Answer 3 : d = "+ d );
+
+
+									console.log("------------------------------------------");
+								</script>
+							</div>
+						</div>
+
+						<div class="questions-wrap well ">
+							<h3 class="">Q4 : What are the values of a and x after the code below?var a = 2; var x = 1 + (a *= 2);</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div id="showOutput4" class="alert alert-success"></div>
+								<code>
+									<p data-height="265" data-theme-id="light" data-slug-hash="ZRKpeO" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="ZRKpeO" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/ZRKpeO/">ZRKpeO</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</code>
+								<script type="text/javascript">
+									var a = 2;
+									var x = 1 + (a *= 2); //x *= y =>	x = x * y
+									document.getElementById("showOutput4").innerHTML ="Answer 4 :x = " + x;
+									console.log("Answer 4 :x = " + x);
+									console.log("------------------------------------------");
+								</script>
+							</div>
+						</div>
+
+						<div class="questions-wrap well ">
+							<h3 class="">Q5 :Find greatest among 4 numbers</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div id="showOutput5" class="alert alert-success"></div>
+								<code>
+									<p data-height="265" data-theme-id="light" data-slug-hash="eKWBOe" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="eKWBOe" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/eKWBOe/">eKWBOe</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</code>
+								<script type="text/javascript">
+									document.getElementById("showOutput5").innerHTML = Math.max(5, 25, 30 ,43);
+
+									console.log("Answer 5 :" + Math.max(5, 25, 30 ,43 ,10));
+									console.log("------------------------------------------");
+								</script>
+							</div>
+						</div>
+
+
+						<div class="questions-wrap well ">
+							<h3 class="">Q6 :Rewrite this if using the ternary operator '?': if (a + b < 4) { result = 'Below'; } else { result = 'Over'; }</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div id="showOutput6" class="alert alert-success"></div>
+								<code>
+									<p data-height="265" data-theme-id="light" data-slug-hash="eKWBzV" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="eKWBzV" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/eKWBzV/">eKWBzV</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</code>
+								<script type="text/javascript">
+									var a = 3, b = 5;
+									var ans = a + b < 4 ? 'Below' : 'Over';
+									document.getElementById("showOutput6").innerHTML = ans;
+
+									console.log("Answer 6 :" + ans);
+									console.log("------------------------------------------");
+								</script>
+							</div>
+						</div>
+
+						<div class="questions-wrap well ">
+							<h3 class="">Q7 :Rewrite following to switch
+							var a = +prompt('a?', ''); if (a == 0) { alert( 0 ); } if (a == 1) { alert( 1 ); } if (a == 2 || a == 3) { alert( '2,3' ); }</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div onclick="enterA();" class="btn btn-default">Enter value of a</div>
+								<div id="showOutput7" class="alert alert-success"></div>
+								<code>
+									<p data-height="265" data-theme-id="light" data-slug-hash="eKWBGK" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="eKWBGK" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/eKWBGK/">eKWBGK</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+								</code>
+								<script type="text/javascript">
+									function enterA(){
+										var a = +prompt('a?', '');
+									switch(a){
+										case 0:
+										alert( 0 );
+										break;
+										case 1:
+										alert( 1 );
+										break;
+										case ( 2 || 3):
+										alert( '2,3' );
+										break;
+									}
+									document.getElementById("showOutput7").innerHTML = a;
+
+									console.log("Answer 7 :" + a);
+									console.log("------------------------------------------");
+									}
+									
+								</script>
+							</div>
+						</div>
+
+						<div class="questions-wrap well ">
+							<h3 class="">Q8 : Write a condition to check if the given age is of a teenager or no. </h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div onclick="enterAge();" class="btn btn-default"> Enter age</div>
+								<div id="showOutput8" class="alert alert-success"></div>
+
+								<code>
+								<p data-height="265" data-theme-id="light" data-slug-hash="eKWBGK" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="eKWBGK" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/eKWBGK/">eKWBGK</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</code>
+								<script type="text/javascript">
+									function enterAge(){
+									var age = prompt('Age batao', '');
+									
+									if( age > 12 && age < 19){
+										console.log("Answer 8 : lucky you !, you still a Teen!")
+										document.getElementById("showOutput8").innerHTML = "lucky you !, you still a Teen!";
+									}else if( age < 13){
+										console.log("Answer 8 : you still a kid!");
+										document.getElementById("showOutput8").innerHTML = "you still a kid!";
+									}else{
+										console.log("Answer 8 : buddhe ho gaye Aap!")
+										document.getElementById("showOutput8").innerHTML = "buddhe ho gaye!";
+									}
+									//document.getElementById("showOutput8").innerHTML = a;
+									console.log("------------------------------------------");
+									}
+									
+									
+								</script>
+							</div>
+						</div>
+
+
+						<div class="questions-wrap well ">
+							<h3 class="">Q9 : Print/alert todays Day using switch & if-else. Also print a message saying “It is a weekend” if Saturday or Sunday! or be creative.</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div id="showOutput9" class="alert alert-success"></div>
+								<code>
+									<p data-height="265" data-theme-id="light" data-slug-hash="BVRLBv" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="answer 9" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/BVRLBv/">answer 9</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</code>
+								<script type="text/javascript">
+									var currDateNew = new Date();
+									var weekDayNew = new Array(7);
+									weekDayNew[0] =  "Sunday";
+									weekDayNew[1] = "Monday";
+									weekDayNew[2] = "Tuesday";
+									weekDayNew[3] = "Wednesday";
+									weekDayNew[4] = "Thursday";
+									weekDayNew[5] = "Friday";
+									weekDayNew[6] = "Saturday";
+
+									var todaynew = weekDayNew[currDateNew.getDay()];
+									//below i compare just with number
+									var currDate = new Date();
+									var today = currDate.getDay();
+									if (today == 0 || today == 6) {
+										console.log(today + "weekend");
+										// its a 
+									}else{
+										if( today == 1 ){
+											console.log("its a Monday")
+										}
+										else if (today == 2){
+											console.log("its a Tuesday")
+
+										}else{
+											console.log("weekday");
+										}
+									}
+									document.getElementById("showOutput9").innerHTML = "Umm, Today is " + todaynew  + "! Still Two more days to go! cuz friday is Holiday!!!";
+									
+									console.log("Answer 9 : Umm, Today is " + todaynew + "! Still Two more days to go! cuz friday is Holiday!!!");
+
+									console.log("------------------------------------------");
+								</script>
+							</div>
+						</div>
+
+
+						<div class="questions-wrap well ">
+							<h3 class="">Q10: Set the color (yellow:morning, blue:evening, black:night) of body tag based on your system time. showcase your creativity.</h3>
+							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+							<div class="answer-div">
+								<div id="showOutput10" class="alert alert-success"></div>
+
+								<code>
+
+								</code>
+								<script type="text/javascript">
+									var currTime = new Date().getHours();
+									if (currTime >= 4 && currTime <= 12) {
+									console.log("Answer 10 : Its" + currTime + "Good Morning!")
+									 document.body.style.backgroundColor = "yellow";
+									 document.getElementById("showOutput10").innerHTML =  " Good Morning!";
+									}else if (currTime >= 13 && currTime <= 19){
+									console.log("Answer 10 : Its" + currTime + "Good Evening!")	
+									 document.body.style.backgroundColor = "blue";
+									 document.getElementById("showOutput10").innerHTML = " Good Evening!";
+									}else{
+									console.log("Answer 10 : Its" + currTime + "Good Night!")	
+									 document.body.style.backgroundColor = "black";
+									 document.getElementById("showOutput10").innerHTML = " Good Night!" ;
+									}
+
+									console.log("------------------------------------------");
+									
+									
+								</script>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		var allBtns = document.getElementsByClassName('button');
+		for (var i = 0; i < allBtns.length; i++) {
+			allBtns[i].nextElementSibling.style.display = 'none';
+			allBtns[i].onclick = function(){
+				var currBtn = this;
+				var currBtnVisible = currBtn.nextElementSibling;
+				if(currBtnVisible.style.display == 'none'){
+					currBtnVisible.style.display = 'block';
+					currBtn.innerHTML = 'Hide Answer';
+				}
+				else{
+					currBtnVisible.style.display = 'none';
+					currBtn.innerHTML = 'Show Answer';
+				}
+
+
+				if(currBtn.id === 'btn6'){
+					calculateAge();			
+				}
+
+				if(currBtn.id === 'btn8' && currBtnVisible.style.display == 'block'){
+					promptFunction();			
+				}
+			};
+
+		}
+
+	</script>
+</body>
+</html>
