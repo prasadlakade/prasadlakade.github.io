@@ -61,19 +61,22 @@
 							What will alert this and why?</h3>
 							<button type="button" class="button btn1 btn btn-default">Show Answer</button>
 							<div class="answer-div">
-
-								<div id="showOutput2" class="alert alert-success"></div>
+								<div class="btn btn-default" onclick="valueOfN();">show value of n</div>
+								<div id="showOutput2" class="alert alert-success" ></div>
 								<code>
 									<p>Below is the reason for  2</p>
 									<p data-height="265" data-theme-id="light" data-slug-hash="yEMGza" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="yEMGza" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/yEMGza/">yEMGza</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 								</code>
 								<script type="text/javascript">
-									var n = 2;
-									n *= 3 + 5;//	x *= y =>	x = x * y
-									alert( n );//16
-									document.getElementById("showOutput2").innerHTML = n;
-									console.log("Answer 2 : " + n);
-									console.log("------------------------------------------");
+									function valueOfN(){
+										var n = 2;
+										n *= 3 + 5;//	x *= y =>	x = x * y
+										alert( n );//16
+										document.getElementById("showOutput2").innerHTML = n;
+										console.log("Answer 2 : " + n);
+										console.log("------------------------------------------");
+									}
+									
 								</script>
 							</div>
 						</div>
