@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+*{margin:0;padding: 0;}
+body{background-color: #bbb;}
+header{position:relative;background:#333;color:#fff;font-family:Arial;}
+.navbar ul{clear: both;padding:0;margin:0;}
+.menulinks{display: inline-block;position: relative;width:24%;text-align: center;}
+.menulinks a{color:#fff;text-transform: uppercase;text-decoration:none;padding: 20px 5px; position: relative;display: block;font-size: 14px;}
+.submenu-ul, .submenu-ul-two{display: none;position: absolute; top:56px; background: #333; margin: 0; padding: 0;width: 100%;}
+.submenu-ul > li, .submenu-ul-two > li{width:auto;display: block;}
+ul.submenu-ul-two{left:100%;top:0;}
+.displayc{display: block;}
+
+</style>
+<body>
+<header>
+	<div class="navbar" id="navbar">
+		<ul>
+			<li class="menulinks"><a href="">LInk one</a></li>
+			<li class="menulinks">
+				<a href="">LInk Two</a>
+				<ul class="submenu-ul">
+					<li class="menulinks">
+						<a href="">Sub link one</a>
+						
+					</li>
+					<li class="menulinks">
+						<a href="">Sub link two</a>
+						<ul class="submenu-ul-two">
+							<li class="menulinks"><a href="">Sub sub link one</a></li>
+							<li class="menulinks"><a href="">Sub sub link two</a></li>
+							<li class="menulinks"><a href="">Sub sub link three</a></li>
+							<li class="menulinks"><a href="">Sub sub link Four</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li class="menulinks"><a href="">LInk three</a></li>
+			<li class="menulinks"><a href="">LInk four</a></li>
+		</ul>
+		</div>
+</header>
+	<script type="text/javascript">
+		var navigationMenu = document.getElementById("navbar");
+		var allMenuLinks = navigationMenu.querySelectorAll("li");
+		for (var i = 0; i < allMenuLinks.length; i++) {
+			allMenuLinks[i].addEventListener('mouseenter',function(){// on this. mouseenter
+				this.style.backgroundColor = "#295d76";
+				this.style.color = "#000";
+				if(this.childNodes.length > 3){ // checking if submenu is present
+					var getUl = this.querySelectorAll("ul")[0]; //selecting  first ul to be  display block
+					getUl.classList.add('displayc'); 
+					console.log(getUl);
+				}
+			});
+			allMenuLinks[i].addEventListener('mouseleave',function(){// on this. mouseleave
+				this.style.backgroundColor = "transparent";
+				this.style.color = "#fff";
+				if(this.childNodes.length > 3){			// checking if submenu is present		
+					var getUl = this.querySelectorAll("ul")[0];//selecting  first ul to be  display none
+					getUl.classList.remove('displayc');
+				}
+			});
+		}
+
+	</script>
+</body>
+</html>

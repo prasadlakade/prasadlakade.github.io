@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+	*{margin:0;}
+	.wrapper{position:relative;height:1000px;padding:200px 0 0 0;}
+	header{position:relative;background:#333;color:#fff;font-family:Arial;}
+	.menulinks{display: inline-block;margin: 20px 40px; }
+	.menulinks a{color:#fff;text-transform: uppercase;text-decoration:none;}
+	.submenu-ul{display: none;}
+	.displayc{display: block;}
+	ul{padding: 0;margin:0;}
+	.stickyheader{position: fixed;top: 0;width: 100%;left: 0;right: 0}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header id="header">
+			<nav id="menu" class="navbar">
+				<ul >
+					<li class="menulinks"><a href="">LInk one</a></li>
+					<li class="menulinks">
+						<a href="">LInk one</a>
+						<ul class="submenu-ul">
+							<li class="menulinks"><a href="">Sub link one</a></li>
+							<li class="menulinks"><a href="">Sub link one</a></li>
+						</ul>
+					</li>
+					<li class="menulinks"><a href="">LInk one</a></li>
+					<li class="menulinks"><a href="">LInk one</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+
+	<script type="text/javascript">
+
+		//console.log(pageYOffset );
+		var header = document.getElementById("header");
+		var stickyHeader = header.offsetTop; // get the position of menu from top
+
+		window.onscroll = function() {makeHeaderSticky()}; 
+		function makeHeaderSticky(){
+			if (window.pageYOffset >= stickyHeader) {
+				header.classList.add("stickyheader")
+			} else {
+				header.classList.remove("stickyheader");
+			}
+		}
+	</script>
+</body>
+</html>

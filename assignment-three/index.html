@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Assignment Two</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style type="text/css">
+	body{position: relative;background:#fff;font-size:14px;font-family: arial,sans-serif;line-height:140%;}
+	*:focus , *:active{outline: none !important;}
+	header.panel{text-transform: uppercase;position: sticky;top: 0;z-index: 11;box-shadow:0 0 15px #ddd;}
+	.button.btn{margin:5px auto;display: block;}
+	.alert-success{display: inline-block;}
+	code{display: block;}
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="panel">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center">Assignment Three</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<!-- questione one -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q1:What is the difference between following 2 functions if any? </h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div ">
+							<div class="panel-body">
+								<div id="showOutput" class="">
+									<ol class="list-group">
+										<li class="list-group-item">Both will return same answer, no need of else when there's only if one concition to check.</li>
+										<li class="list-group-item">IF that condition fails it will come out and show the return statement</li>
+									</ol>
+								</div>
+							</div>
+							<script type="text/javascript">
+								function checkAge(age) {
+									if (age > 18) {
+										return true;
+									} else {
+										return confirm('Did parents allow you?');
+									}
+								}
+
+								function checkAge(age) {
+									if (age > 18) {
+										return true;
+									}
+									return confirm('Did parents allow you?');
+								}
+
+								//checkAge(18);
+							</script>
+						</div>
+					</div>
+					<!-- questione two -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q2 :Rewrite above function using ternary operator</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div ">
+							<div class="panel-body">
+								<div id="showOutput" class="">
+									<div class="form-group">
+										<label for="usr">Enter Age:</label>
+										<input type="text" class="form-control" id="enterage">
+										<button id="submit" class="btn btn-primary" onclick="showAge();" >Submit</button>
+										<div id="showoutput2">
+										</div>
+									</div>
+								</div>
+							</div>
+							<script type="text/javascript">
+
+								function showAge(){
+									let age = document.getElementById("enterage").value;
+									(age > 18) ? alert("yes you are older") : alert("you still a kid") 
+								}
+							</script>
+						</div>
+					</div>
+					<!-- questione three -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q3: WAF to find min value from 2 numbers using ternary operators</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div ">
+							<div class="panel-body">
+								<div id="showOutput" class="">
+									<div class="form-group">
+										<label for="usr">Enter 1st value:</label>
+										<input type="number" class="form-control" id="value1">
+										<label for="usr">Enter 2nd value:</label>
+										<input type="number" class="form-control" id="value2">
+										<button id="submit3" class="btn btn-primary" onclick="showMinValue();" >Submit</button>
+										<div id="showoutput2">
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<script type="text/javascript">
+
+								function showMinValue(x,y){
+									let valueOne = document.getElementById("value1").value;
+									let valueTwo = document.getElementById("value2").value;
+									(valueOne < valueTwo) ? alert(valueOne + " is smaller") : alert(valueTwo + " is smaller") 
+								}
+							</script>
+						</div>
+					</div>
+					<!-- questione four -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q4 :WAF to find prime numbers from 1-100</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div">
+							<div id="well">
+								<label for="numbers">Enter Number Limit</label>
+								<input type="number" name="primeno" id="primeno"  />
+								<button id="submit4" class="btn btn-primary" onclick="showPrimeNumbers();" >Submit</button>
+								<div id="showoutput4" class="panel panel-body"></div>
+								<div class="panel panel-default">
+									<p data-height="265" data-theme-id="light" data-slug-hash="bKYbPN" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="Find Prime numbers using javascript" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/bKYbPN/">Find Prime numbers using javascript</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								</div>
+							</div>
+							<script type="text/javascript">
+								function showPrimeNumbers(){
+									var numberCount = document.getElementById("primeno").value;
+									for (var i = 1; i <= numberCount; i++) {
+										var primeCount = 0;
+										for(var j = 1; j <= i; j++) {
+											// if it is divisible i.e remainder is 0
+											if (i % j == 0) {
+												primeCount++;
+											}
+										}
+										// if count is 2 , then its a prime number cuz its divisble by itself and 1
+										if(primeCount == 2){ 
+											console.log(i);
+											document.getElementById("showoutput4").insertAdjacentHTML('beforeend', i + ' ');
+										}
+									}
+								}			
+							</script>
+						</div>
+					</div>
+					<!-- questione five -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q5 : Implement IIFE</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div">
+							<div id="well">
+								<div id="showoutput5" class="panel panel-body"></div>
+								<p data-height="265" data-theme-id="light" data-slug-hash="RJjbOv" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="RJjbOv" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/RJjbOv/">RJjbOv</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+							</div>
+							<script type="text/javascript">
+								(function(age){
+									if (age > 18) {
+										document.getElementById("showoutput5").innerHTML = "IIFE se kiya hai!"
+									} else {
+										return confirm('Did parents allow you?');
+									}
+								})(20);
+							</script>
+						</div>
+					</div>
+
+					<!-- questione six -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q6 : Demonstrate difference between function declaration and expression</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div">
+							<div id="well">
+								<div id="showoutput6a" class="panel panel-body"></div>
+								<div id="showoutput6b" class="panel panel-body"></div>
+
+								<p data-height="265" data-theme-id="light" data-slug-hash="yEPBwa" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="yEPBwa" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/yEPBwa/">yEPBwa</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+							</div>
+							<script type="text/javascript">
+								var expressionFunction = function(age){
+									if (age > 18) {
+										document.getElementById("showoutput6a").innerHTML = "expression function hai yeh!"
+									} else {
+										return confirm('Did parents allow you?');
+									}
+								}
+								expressionFunction(20);
+
+								function functionDecalaration(age){
+									if (age > 18) {
+										document.getElementById("showoutput6b").innerHTML = "function Declaration hai yeh!"
+									} else {
+										return confirm('Did parents allow you?');
+									}
+								}
+								functionDecalaration(20);
+							</script>
+						</div>
+					</div>
+
+					<!-- questione seven -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q7: WAF to multi 2/multiple numbers. (use function parameters/arguments)</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div">
+							<div id="well">
+								<div id="showoutput7" class="panel panel-body"></div>
+								<p data-height="265" data-theme-id="light" data-slug-hash="wXPvvB" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="multiply 2/multiple numbers. using  function parameters/arguments" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/wXPvvB/">multiply 2/multiple numbers. using  function parameters/arguments</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+							</div>
+							<script type="text/javascript">
+								function multiplyNos(x,y,z){
+									var result;
+									result = x * y * z;
+									document.getElementById("showoutput7").innerHTML= result;
+								}
+								multiplyNos(20, 10, 5);
+							</script>
+						</div>
+					</div>
+
+					<!-- questione eight -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q8: Implement previous assignments (Take any 5 examples.) using functions e.g.: get todays day, change bg, check age, etc. try to use pure functions.</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div">
+							<div class="well">
+								<div id="showoutput8a" class="panel panel-body"></div>
+								<div id="showoutput8b" class="panel panel-body"></div>
+								<div id="showoutput8c" class="panel panel-body"> Pls m bored to use more pure functions, m already using it throughout assignments :P , so 2 examples are enough na ,spare me :P</div>
+							</div>
+							<script type="text/javascript">
+								function multiplyNos(x,y,z){
+									var result;
+									result = x * y * z;
+									document.getElementById("showoutput8a").innerHTML= "Multiplication ka answer ="+result;
+								}
+								multiplyNos(20, 10, 5);
+
+								function checkAge(age) {
+									if (age > 18) {
+										document.getElementById("showoutput8b").innerHTML= age + ": you are not a kid";
+									} else {
+										document.getElementById("showoutput8b").innerHTML= age + ": you are a kid";
+									}
+								}
+								checkAge(20);
+							</script>
+						</div>
+					</div>
+
+					<!-- questione nine -->
+					<div class="questions-wrap well ">
+						<h3 class="">Q9: WAF: To check if palindrome</h3>
+						<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+						<div class="answer-div">
+							<div class="well">
+								<label for="text">Enter your string</label>
+								<input type="text" name="palindrominp" id="palindrominp" />
+								<input type="submit" value="palindrome hai ki nahi ?" id="inpsubmit9" class="btn btn-default" />
+							</div>
+							<div id="result-9" style="display: none;" class="panel panel-body">
+								Entered string is : <p id="entered-output-string"></p>
+								Reversed string is : <p id="reversed-output-string"></p>
+								Conclusion: <p id="conc-output-string"></p>
+							</div>
+
+							<div class="panel panel-body">
+								<p data-height="265" data-theme-id="light" data-slug-hash="MXOWNB" data-default-tab="js" data-user="prasadlakade" data-embed-version="2" data-pen-title="MXOWNB" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/MXOWNB/">MXOWNB</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+							</div>
+							<script type="text/javascript">
+								var submitBtn9 = document.getElementById("inpsubmit9");
+								submitBtn9.addEventListener('click', checkPalindrome);
+
+
+								var ogString;
+								function changeToLowercase(ogString){
+									var lowercaseString = ogString.toLowerCase();
+								//Reverse the string and compare
+								reversedEnteredString(lowercaseString);
+								document.getElementById("entered-output-string").innerHTML = lowercaseString;
+								return lowercaseString;
+							}
+
+
+
+							function reversedEnteredString(lowercaseString){
+								var reversedString = lowercaseString.split(''); //separate each character from string
+								reversedString = reversedString.reverse(); //reverse the order of characters
+								reversedString = reversedString.join(''); // now combining the characters to form as string
+								console.log(reversedString);
+								document.getElementById("reversed-output-string").innerHTML = reversedString;
+								compareVal(reversedString,lowercaseString);
+								return reversedString;
+							}
+
+							function checkPalindrome(){
+								var enteredString = document.getElementById("palindrominp").value;
+								console.log(enteredString);
+								document.getElementById("result-9").style.display = "block";
+								
+
+								ogString = enteredString;
+								//changing enter string to lower case
+								changeToLowercase(ogString);
+								//compare two string
+							}
+
+							function compareVal(reversedString,lowercaseString){
+								console.log(lowercaseString);
+								if(lowercaseString == reversedString){
+									document.getElementById("conc-output-string").innerHTML = "Its a Palindrome";
+								}else{
+									document.getElementById("conc-output-string").innerHTML = "Its Not a Palindrome";
+								}
+							}
+
+						</script>
+					</div>
+				</div>
+
+				<!-- questione Ten -->
+				<div class="questions-wrap well ">
+					<h3 class="">Q10: WAF: To generate fibonacci series upto user entered number eg: if user enters 6.  output: 1 1 2 3 5 8 </h3>
+					<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+					<div class="answer-div">
+						<div class="well">
+							<label for="text">Enter limit for Fibonacci series</label>
+							<input type="number" name="fibonacciinp" id="fibonacciinp" />
+							<input type="submit" value="See it!" id="inpsubmit10" class="btn btn-default" onclick="showFibonacci();" />
+
+							<div id="showOutput10" class="panel panel-body" style="display:none">0 1</div>
+
+							<p data-height="265" data-theme-id="light" data-slug-hash="Keygrb" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="Find Fibonacci series till entered number using javascript" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/Keygrb/">Find Fibonacci series till entered number using javascript</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						</div>
+						<script type="text/javascript">
+							function showFibonacci(){
+
+							// get inserted count limit in a const,
+							const enteredLimit  = document.getElementById("fibonacciinp").value;
+
+							if(enteredLimit){
+								document.getElementById("showOutput10").style.display = "block";
+								var num1 = 0,num2 = 1,temp = 0;
+							//run a for loop to get all series till entered number
+							for (var i = 0; i < enteredLimit; i++) {
+							temp = num1 + num2;// adding two consecutive numbers and storing in the 3rd var
+							num1 = num2 // now num1 becomes num2 and
+							num2 = temp // num2 becomes the addition for previous num 1 and 2 and this cycle will continue till limit
+							document.getElementById("showOutput10").insertAdjacentHTML('beforeend', ' ' + temp + ' ');
+							document.getElementById("fibonacciinp").value = '';
+						}
+					}else{
+						alert("number to enter karo");
+					}
+				}
+			</script>
+		</div>
+	</div>
+
+	<!-- questione Eleven -->
+	<div class="questions-wrap well ">
+		<h3 class="">Q11:  create 3 pure functions</h3>
+		<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+		<div class="answer-div ">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<p class="">*TO get the Minimum value from the given array.</p>
+					<div id="showOutput11a" class=""></div>
+					<p data-height="265" data-theme-id="light" data-slug-hash="OEObpa" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="OEObpa" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/OEObpa/">OEObpa</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					<script type="text/javascript">
+						function minArray(){
+										var arrOne=[10,40,40,50,3]; // array
+										var smallValue = arrOne[0];// will assign the fiest value from arrOne with which we wil compare and then store and if smaller
+
+										for (var i = 0; i < arrOne.length; i++) {
+											if(arrOne[i] < smallValue){ // if i < smallvalue , currently its null
+												smallValue = arrOne[i];
+											}
+										}
+										document.getElementById("showOutput11a").innerHTML = "MInvalue from [" + [arrOne] + "] is "+ smallValue; 
+									}
+									minArray();
+								</script>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="">*TO get the maximum value from the given array.</p>
+								<div id="showOutput11b" class=""></div>
+								<p data-height="265" data-theme-id="light" data-slug-hash="JZObJN" data-default-tab="js,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="To get the maximum value from the given array." data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/JZObJN/">To get the maximum value from the given array.</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								<script type="text/javascript">
+
+									function maxArray(){
+										var arrOne=[10,40,40,50,3]; // array
+										var maxValue = arrOne[0];// will assign the fiest value from arrOne with which we wil compare and then store and if smaller
+
+										for (var i = 0; i < arrOne.length; i++) {
+											if(arrOne[i] > maxValue){ // if i < smallvalue , currently its null
+												maxValue = arrOne[i];
+											}
+										}
+										document.getElementById("showOutput11b").innerHTML = "Maxvalue from [" + [arrOne] + "] is "+ maxValue; 
+									}
+									maxArray(); 
+								</script>
+							</div>
+						</div>
+
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p class="">*get query parameter value from the url provided.</p>
+								<label for="text">Enter your search url</label>
+								<input type="text" name="searchurl" id="searchurl" class="form-control" value="https://www.google.co.in/search?q=bleach+movie&oq=bleach+movie&aqs=chrome..69i57j0l5.2457j0j9&sourceid=chrome&ie=UTF-8" />
+								<input type="submit" value="get Search parameter" id="inpsubmit11" class="btn btn-default" onclick="getParamFromUrl();" />
+								<div id="showOutput11c" class=""></div>
+								<p data-height="265" data-theme-id="light" data-slug-hash="OEObYe" data-default-tab="html,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="*get query parameter value from the url provided." data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/OEObYe/">*get query parameter value from the url provided.</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+								<script type="text/javascript">
+									function getParamFromUrl(){
+										var getUrl = document.getElementById("searchurl").value;
+										var getQ = getUrl.split('?'); //url is split once at  1st question mark found, as there was only one 
+										getQ = getQ[1].split('q=');//split at q from array index 1, as after splitting two elements were formed
+										getQ = getQ[1].split('&');//split at & , so we got search paramter between q= and &
+										var searchParameter = getQ[0];
+										console.log(searchParameter);
+										document.getElementById("showOutput11c").innerHTML = searchParameter;
+
+									}
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- questione Twelve -->
+				<div class="questions-wrap well ">
+					<h3 class="">Q12: make a header with navigation bar at 200px from the top of the screen, make the header sticky once you scroll past it.</h3>
+					<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+					<div class="answer-div ">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<a href="stickyheader.html" class="btn btn-primary">See here</a>
+							</div>
+						</div>
+						<p data-height="265" data-theme-id="light" data-slug-hash="jKayMM" data-default-tab="html,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="jKayMM" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/jKayMM/">jKayMM</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+				</div>
+
+				<!-- questione thirteen -->
+				<div class="questions-wrap well ">
+					<h3 class="">Q13: make 3 level navigation menu, using javascript. use hover/click to show child level menus</h3>
+					<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+					<div class="answer-div ">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<a href="navigation.html" class="btn btn-primary">See here</a>
+							</div>
+						</div>
+						<p data-height="265" data-theme-id="light" data-slug-hash="wXPJRj" data-default-tab="html,result" data-user="prasadlakade" data-embed-version="2" data-pen-title="Three Level Navigation menu using javascript" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/prasadlakade/pen/wXPJRj/">Three Level Navigation menu using javascript</a> by Prasad Lakade (<a href="https://codepen.io/prasadlakade">@prasadlakade</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</div>
+				</div>
+
+
+				<!-- questione fourteen -->
+				<div class="questions-wrap well ">
+					<h3 class="">Q14 :implement tab switch functionality / name of tab and content should come from an object</h3>
+					<button type="button" class="button btn1 btn btn-default">Show Answer</button>
+					<div class="answer-div">
+						<style type="text/css">
+						.tab-content{display: none;}
+						.activetab{background-color: #333;color: #fff;}
+					</style>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<ul id="tab-btn" class="btn-group">
+
+							</ul>
+						</div>
+						<div id="tab-content-wrapper" class="tab-content-wrapper panel-body">
+
+						</div>
+					</div>
+					<script type="text/javascript">
+						//taking tabs in the object
+						var tabs = {
+							tab1:{
+								tabName:"Tab One",
+								tabContent: "Yo! This Tab One content",
+
+							},
+							tab2:{
+								tabName:"Tab Two",
+								tabContent: "Yo! This Tab Two content",
+
+							},
+							tab3:{
+								tabName:"Tab Three",
+								tabContent: "Yo! This Tab Three content",
+
+							},
+
+						}
+
+							// console.log();
+
+							createTabs(tabs); // passing tabs to create tab btns
+							createContent(tabs);// passing tabs to create tab content blocks
+
+							function createTabs(tabs){
+								var tabCount = 1;
+								for( tab in tabs ){ //looping thru the object
+									var tabNameObj = tabs[tab]; 
+									//console.log(tabNameObj);
+
+									//below steps for  creating btn li and passing tabname to it
+									let tabUl = document.getElementById('tab-btn');
+									var tabLi = document.createElement("li");
+									var tabTxt = document.createTextNode(tabNameObj.tabName);
+
+									//append tabs name in lists
+									tabUl.appendChild(tabLi);
+									tabLi.appendChild(tabTxt);
+
+
+									//add class and ids to tab name
+									tabLi.setAttribute("id", "tab"+tabCount); //added unique id which will be compared with content block
+									tabLi.setAttribute("class", "btn btn-default");
+									tabCount++;
+								}
+							}
+
+
+							function createContent(tabs){
+								var contentCount = 1;
+								for( tab in tabs ){
+									var tabContentObj = tabs[tab];
+
+									//console.log(tabContentObj.tabContent);
+
+									//steps to get content div and creation of divs and passing tabcontent
+									var contentDiv = document.getElementById('tab-content-wrapper');
+									var contentList = document.createElement("div");
+									contentList.setAttribute( "class", "tab-content" );
+									contentList.setAttribute("data-id" ,tab);  //added tab id which will be compared with tab btns
+									var contentEle = document.createElement("p");
+									var contentTxt= document.createTextNode(tabContentObj.tabContent);
+
+									//apending nodes to form content section
+									contentDiv.appendChild(contentList);
+									contentList.appendChild(contentEle);
+									contentEle.appendChild(contentTxt);
+
+								}
+							}
+
+
+							// IIFe to check clicks on the tab button and respectively show their content
+							(function(){
+								let activeContent = document.getElementsByClassName('tab-content')[0];
+								activeContent.style.display = "block"; // 1st content block made active
+
+								//got all tab btns and content divs element
+								let tabUl = document.getElementById('tab-btn');
+								var contentDiv = document.getElementById('tab-content-wrapper');
+								var allTabList = tabUl.querySelectorAll("li");
+								var contentDivList = contentDiv.querySelectorAll("div");
+								for (var i = 0; i < allTabList.length; i++) {
+
+									//adding event listenre to check the click on button
+									allTabList[i].addEventListener('click',function(){
+										var clickedTab = this.id; // storing current clicked button's id
+
+										for (var j = 0; j < contentDivList.length; j++) {
+											//loping throught all content section and making display none
+											contentDivList[j].style.display = "none";
+
+											//below getting data-id of all content section divs
+											var displayContent = contentDivList[j].getAttribute("data-id");
+
+											//below comparing data id and clicked btn ID and if they are same 
+											if(displayContent == clickedTab){
+												var showContent = contentDivList[j];
+												showContent.style.display = "block";
+											}
+										}
+									});
+								}
+							})();
+							
+						</script>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+	var allBtns = document.getElementsByClassName('button');
+	for (var i = 0; i < allBtns.length; i++) {
+		allBtns[i].nextElementSibling.style.display = 'none';
+		allBtns[i].onclick = function(){
+			var currBtn = this;
+			var currBtnVisible = currBtn.nextElementSibling;
+			if(currBtnVisible.style.display == 'none'){
+				currBtnVisible.style.display = 'block';
+				currBtn.innerHTML = 'Hide Answer';
+			}
+			else{
+				currBtnVisible.style.display = 'none';
+				currBtn.innerHTML = 'Show Answer';
+			}
+
+
+			if(currBtn.id === 'btn6'){
+				calculateAge();			
+			}
+
+			if(currBtn.id === 'btn8' && currBtnVisible.style.display == 'block'){
+				promptFunction();			
+			}
+		};
+
+	}
+
+</script>
+</body>
+</html>
